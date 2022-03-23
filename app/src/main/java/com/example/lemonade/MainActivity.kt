@@ -63,9 +63,11 @@ class MainActivity : AppCompatActivity() {
         }
         // === END IF STATEMENT ===
 
+        // Double exclamation (!!) is a condition so that the object can't be null.
         lemonImage = findViewById(R.id.image_lemon_state)
         setViewElements()
         lemonImage!!.setOnClickListener {
+            lemonImage!!.setImageResource(R.drawable.lemon_tree)
             // TODO: call the method that handles the state when the image is clicked
         }
         lemonImage!!.setOnLongClickListener {
@@ -117,7 +119,7 @@ class MainActivity : AppCompatActivity() {
      * Set up the view elements according to the state.
      */
     private fun setViewElements() {
-        val textAction: TextView = findViewById(R.id.text_action)
+        val textAction: TextView = findViewById(R.id.image_lemon_state)
         // TODO: set up a conditional that tracks the lemonadeState
 
         // TODO: for each state, the textAction TextView should be set to the corresponding string from

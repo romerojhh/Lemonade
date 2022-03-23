@@ -31,11 +31,9 @@ import androidx.test.espresso.matcher.BoundedMatcher
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.example.lemonade.DrawableMatcher.withDrawable
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.junit.Rule
 
 /**
  * The lemonade app is effectively a state machine.
@@ -51,7 +49,7 @@ open class BaseTest {
      * @param drawableResource Integer for the expected drawable resource.
      */
     fun testState(textActionResource: Int, drawableResource: Int) {
-        onView(withId(R.id.text_action))
+        onView(withId(R.id.image_lemon_state))
             .check(matches(ViewMatchers.withText(textActionResource)))
         onView(withId(R.id.image_lemon_state)).check(
             matches(withDrawable(drawableResource)))
